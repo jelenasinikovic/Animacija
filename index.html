@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacija</title>
+    <style>
+        .first{
+            color:#fb5dad ;
+            filter: blur(20px);
+        }
+        .second{
+            color: #55fb9f ;
+            filter: blur(20px);
+
+        }
+        .third{
+            color: #b97aff;
+            filter: blur(20px);
+        }
+        #box{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius:100% ;
+            background: linear-gradient(#fb5dad,  #55fb9f, #b97aff  );
+        }
+        body {
+            margin: 0 ;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #050210;
+        }
+        .circle{
+            animation-name: my-animation;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+            border-radius: 100%;
+            margin-top:230px;
+            position: relative;
+        }
+            
+           
+
+         .circle::after{
+             content: " ";
+             position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: #050210;
+            border-radius: 100%;
+            margin-top: 50px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+            animation-name: second-animation;
+            animation-duration:1s ;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+         }
+
+
+        @keyframes my-animation {
+            from {
+                transform: rotate (0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+
+            }
+        }
+        @keyframes second-animation {
+            from{
+                background-color: #050210;
+            }
+            to{
+                background-color: #262136;
+            }
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+        <div class="circle">
+            <span class="first" id="box"></span>
+            <span class="second" id="box"></span>
+            <span class="third" id="box"></span>
+        </div>
+</body>
+</html>
